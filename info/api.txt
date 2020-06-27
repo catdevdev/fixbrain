@@ -1,0 +1,121 @@
+
+User routes:
+
+@desc    Register user
+@route   POST /api/v1/auth/register
+@access  Public
+
+@desc    Login user
+@route   POST /api/v1/auth/login
+@access  Public
+
+@desc    Get current logged in user
+@route   POST /api/v1/auth/me
+@access  Private
+
+
+Routes multiplication table
+
+@desc    Send config(setting of multiplication table)
+         and get the test
+@route   GET /api/v1/training/multiplicationtable/test
+@access  Private
+
+req:
+{
+    "type": "practice", //practice, exam
+    "multiplicationExamples" : 
+    [
+        {
+            "table": 2,
+            "examples": [2,3,4,5,6,7,8,9]
+        },
+        {
+            "table": 3,
+            "examples": [2,3,4,5,6,7,8,9]
+        },
+        {
+            "table": 4,
+            "examples": [2,3,4,5,6,7,8,9]
+        },
+        {
+            "table": 5,
+            "examples": [2,3,4,5,6,7,8,9]
+        },
+        {
+            "table": 6,
+            "examples": [2,3,4,5,6,7,8,9]
+        },
+        {
+            "table": 7,
+            "examples": [2,3,4,5,6,7,8,9]
+        },
+        {
+            "table": 8,
+            "examples": [2,3,4,5,6,7,8,9]
+        },
+        {
+            "table": 9,
+            "examples": [2,3,4,5,6,7,8,9]
+        },
+    ],
+    "timeLimit": true, // true, false
+    "timeLimitSecond": 5,
+    "numberofrepetitions" : 5
+}
+get:
+{
+    "examples": 
+    [       
+        {
+            nums: [2, 5],
+            example: "2 + 5"
+        },
+        {
+            nums: [2, 5],
+            example: "2 + 5"
+        },
+        {
+            nums: [2, 5],
+            example: "2 + 5"
+        },
+        {
+            nums: [2, 5],
+            example: "2 + 5"
+        },
+        {
+            nums: [2, 5],
+            example: "2 + 5"
+        },
+        {
+            nums: [2, 5],
+            example: "2 + 5"
+        },
+        {
+            nums: [2, 5],
+            example: "2 + 5"
+        },
+        {
+            nums: [2, 5],
+            example: "2 + 5"
+        }
+    ]
+}
+
+
+@desc    Send quantity all and right answers
+         and get sum of experience 
+         ALSO add experience to user
+@route   POST /api/v1/training/multiplicationtable/result
+@access  Private
+
+req:
+{
+    "allAnswers": 50
+    "rightAnswers": 26
+}
+
+get: 
+{
+    "experience": 250
+}
