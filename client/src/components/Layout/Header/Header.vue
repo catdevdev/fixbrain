@@ -13,7 +13,7 @@
         <Settings></Settings>
       </div>
       <div v-else class="header__auth">
-        <Button @click.native="onSubmit" type="default" center width="150px" height="30px">Sign</Button>
+        <Button @click.native="Signup" type="default" center width="150px" height="30px">Signup</Button>
       </div>
     </div>
   </header>
@@ -39,6 +39,9 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    
+  },
   computed: {
     auth() {
       return this.$store.getters.isAuthenticated;
@@ -47,7 +50,7 @@ export default {
       return this.$store.getters.user;
     }
   },
-  created() {}
+  
 };
 </script>
 

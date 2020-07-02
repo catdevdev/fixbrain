@@ -1,10 +1,25 @@
 <template>
-  <h1>Setting</h1>
+  <Button  @click='logoutHandler' type="default"  width="150px" height="40px">Logout</Button>
 </template>
 
 <script>
-export default {};
+import Button from '../../../components/UI/Button/Button'
+export default {
+  components: {
+    Button
+  },
+  methods: {
+    logoutHandler() {
+      storage.removeItem(token);
+      storage.removeItem(_id);
+    }
+  },
+};
 </script>
 
-<style>
+<style lang='scss' scoped>
+
+button {
+  margin: 10px
+}
 </style>

@@ -14,6 +14,7 @@
       />-->
       <input v-model="password" type="text" />
       <Button @click.native="onSubmit" type="default" center width="225px" height="35px">SignIn</Button>
+      <router-link to="/auth/signup" tab="li">Don't have an account?</router-link>
     </form>
   </div>
 </template>
@@ -119,5 +120,22 @@ input {
   margin-bottom: 20px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   outline: none;
+}
+
+a {
+  margin-top: 20px;
+
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 14px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: 0.1s color;
+  &:hover {
+    color: rgb(44, 44, 186)
+  }
 }
 </style>

@@ -43,7 +43,11 @@ exports.getmultiplicationtest = asyncHandler(async (req, res, next) => {
       examplesMultiplied.push(...finallyRefinedExamples);
     }
 
-    console.log(examplesMultiplied);
+    function shuffle(array) {
+      array.sort(() => Math.random() - 0.5);
+    }
+
+    shuffle(examplesMultiplied);
 
     res.status(200).json({ success: true, examplesMultiplied });
   } else if (type === 'exam') {
