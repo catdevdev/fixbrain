@@ -1,5 +1,5 @@
 <template>
-  <Button  @click='logoutHandler' type="default"  width="150px" height="40px">Logout</Button>
+  <Button  @click.native='logoutHandler' type="default"  width="150px" height="40px">Logout</Button>
 </template>
 
 <script>
@@ -10,8 +10,8 @@ export default {
   },
   methods: {
     logoutHandler() {
-      storage.removeItem(token);
-      storage.removeItem(_id);
+      this.$store.dispatch('logout');
+      this.$router.push('/')
     }
   },
 };

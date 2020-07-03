@@ -27,6 +27,16 @@ export default new Vuex.Store({
       state.typeTraining = typeTraining;
       state.dataTraining = dataFromServer.data.examplesMultiplied;
       console.log(dataFromServer.data.examplesMultiplied);
+    },
+    clearAuthData(state) {
+      state.token = null;
+      state.userId = null;
+      state.user = null;
+      state.typeTraining = null;
+      state.dataTraining = null;
+      localStorage.removeItem("token");
+      localStorage.removeItem("_id");
+      
     }
   },
   actions: {
@@ -97,17 +107,9 @@ export default new Vuex.Store({
 
       commit('authUser', sumData);
     },
-
-    // fetchUser({ commit }) {
-    //   axios
-    //     .get('/api/v1/auth/me')
-    //     .then(res => {
-    //       console.log(res.data.data);
-    //       commit('storeUser', res.data.data);
-    //       localStorage.setItem('user', res.data.data);
-    //     })
-    //     .catch(err => console.log(err));
-    // }
+    logout({ commit }) {
+      commit('clearAuthData');
+    },
     async startTraining({ commit }, trainingData) {
       const dataFromServer = await axios.post(
         '/api/v1/training/multiplicationtable/test',
