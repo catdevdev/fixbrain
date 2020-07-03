@@ -13,7 +13,7 @@
         name="password"
       />-->
       <input v-model="password" type="text" />
-      <Button @click.native="onSubmit" type="default" center width="225px" height="35px">SignIn</Button>
+      <Button @click.native="onSubmit" type="default" center width="225px" height="35px" :spinner='spinner'>SignIn</Button>
       <router-link to="/auth/signup" tab="li">Don't have an account?</router-link>
     </form>
   </div>
@@ -29,7 +29,8 @@ export default {
     return {
       email: null,
       password: null,
-      emojiPassword: ""
+      emojiPassword: "",
+      spinner: false
     };
   },
   methods: {
@@ -66,10 +67,11 @@ export default {
         email: this.email,
         password: this.password
       };
+      this.spinner = true;
       await this.$store.dispatch("signin", data);
-      
-      this.$router.push('/') 
+      this.spinner = false;
 
+      this.$router.push("/");
     }
   }
 };
@@ -135,7 +137,7 @@ a {
 
   transition: 0.1s color;
   &:hover {
-    color: rgb(44, 44, 186)
+    color: rgb(44, 44, 186);
   }
 }
 </style>

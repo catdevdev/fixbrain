@@ -33,6 +33,7 @@ app.use((req, res, next) => {
     'Origin, X-Requested-With, Content-Type, Accept, Authorization'
   );
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+
   next();
 });
 
@@ -59,12 +60,7 @@ app.use(errorHander);
 
 const PORT = process.env.PORT || 5000;
 
-const server = app.listen(
-  PORT,
-  console.log(
-    `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
-  )
-);
+const server = app.listen(PORT, '0.0.0.0');
 
 // Handle unhandled promise
 process.on('unhandledRejection', (err, promise) => {

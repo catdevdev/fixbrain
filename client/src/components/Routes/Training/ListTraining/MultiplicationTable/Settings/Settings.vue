@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="container__button">
-      <Button @click.native="getTest" type="default" width="225px">Start</Button>
+      <Button @click.native="getTest" type="default" width="225px" height='45px' :spinner='spinner'>Start</Button>
     </div>
   </div>
 </template>
@@ -83,8 +83,9 @@ export default {
       };
 
       console.log(dataToServer);
-
+      this.spinner = true;
       await this.$store.dispatch("startTraining", dataToServer);
+      this.spinner = false;
       this.$router.push("/training/start");
       
     }
@@ -92,6 +93,7 @@ export default {
   data() {
     return {
       type: "practice", //practice, exam
+      spinner: false,
       multiplicationExamples: [
         {
           table: 2,

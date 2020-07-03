@@ -4,7 +4,12 @@
       <div class="blocks">
         <div class="blur-examples"></div>
         <div class="current-example">
-          <input v-model="inputValue" type="text" />
+          <input
+            @keyup.enter="answerHanlder"
+            class="input-example"
+            v-model="inputValue"
+            type="text"
+          />
           <button @click="answerHanlder"></button>
           <div
             v-if="currentEmojiUrl"
@@ -90,7 +95,7 @@ export default {
   },
   methods: {
     answerHanlder() {
-      console.log(123);
+      document.querySelector(".input-example").focus();
       for (let i = 0; i < this.examples.length; i++) {
         if (this.examples[i].state === "current" && this.inputValue) {
           // change current
@@ -140,6 +145,10 @@ export default {
           this.examples[i - 1].size.widthElements.answer = 200; // 200
 
           this.iterate++;
+          if(this.iterate>=this.examples.length) {
+            this.$router.push('/training/multiplicationtable/results') 
+            
+          }
         }
       }
     }

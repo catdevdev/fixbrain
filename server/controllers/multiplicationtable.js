@@ -64,7 +64,9 @@ exports.getmultiplicationresult = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse('Need allAnswers or rightAnswers', 400));
   }
 
-  const experience = (allAnswers + rightAnswers) * 10;
+  const wrongAnswers = allAnswers - rightAnswers;
+
+  const experience = rightAnswers * 10 + wrongAnswers * 3;
 
   const user = await User.findById(req.user.id);
 
@@ -75,8 +77,9 @@ exports.getmultiplicationresult = asyncHandler(async (req, res, next) => {
     user.level++;
   }
 
-  await User.findByIdAndUpdate(req.user.id, user);
   console.log(user);
 
-  res.status(200).json({ success: true, experience });
+  await User.findByIdAndUpdate(req.user.id, user);
+
+  res.status(200).json({ success: true, experience, user });
 });

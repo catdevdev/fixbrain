@@ -8,7 +8,14 @@
       <input v-model="login" type="text" id="login" name="login" />
       <label for="password">Password</label>
       <input v-model="password" type="text" id="password" name="password" />
-      <Button @click.native="onSubmit" type="default" center width="225px" height="35px">SignUp</Button>
+      <Button
+        @click.native="onSubmit"
+        type="default"
+        center
+        width="225px"
+        height="35px"
+        :spinner="spinner"
+      >SignUp</Button>
 
       <router-link to="/auth/signin" tab="li">Already have an account?</router-link>
     </form>
@@ -25,17 +32,23 @@ export default {
     return {
       email: null,
       login: null,
-      password: null
+      password: null,
+      spinner: false
     };
   },
   methods: {
-    onSubmit() {
+    async onSubmit() {
       const data = {
         email: this.email,
         login: this.login,
         password: this.password
       };
-      this.$store.dispatch("signup", data);
+
+      this.spinner = true;
+      await this.$store.dispatch("signup", data);
+      this.spinner = false;
+
+      this.$router.push("/");
     }
   }
 };
@@ -101,7 +114,7 @@ a {
 
   transition: 0.1s color;
   &:hover {
-    color: rgb(44, 44, 186)
+    color: rgb(44, 44, 186);
   }
 }
 </style>

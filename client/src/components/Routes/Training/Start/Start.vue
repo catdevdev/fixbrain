@@ -26,7 +26,7 @@ export default {
       }
       //   console.log(123);
     };
-    var interval = setInterval(countDown, 1);
+    var interval = setInterval(countDown, 1200);
   }
 };
 </script>

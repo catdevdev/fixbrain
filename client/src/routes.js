@@ -7,6 +7,7 @@ import Signin from './components/Routes/Auth/Signin';
 import MultiplicationTableSettings from './components/Routes/Training/ListTraining/MultiplicationTable/Settings/Settings';
 import Start from './components/Routes/Training/Start/Start';
 import MutliplicationTableTraining from './components/Routes/Training/ListTraining/MultiplicationTable/Training/Training';
+import Results from './components/Routes/Training/Results/Results';
 
 import store from './store';
 
@@ -49,6 +50,17 @@ export const routes = [
   {
     path: '/training/multiplicationtable',
     component: MutliplicationTableTraining,
+    beforeEnter: (to, from, next) => {
+      if (store.state.token ) {
+        next();
+      } else {
+        next('/auth/signin');
+      }
+    }
+  },
+  {
+    path: '/training/multiplicationtable/results',
+    component: Results,
     beforeEnter: (to, from, next) => {
       if (store.state.token ) {
         next();

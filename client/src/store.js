@@ -121,6 +121,10 @@ export default new Vuex.Store({
       };
       console.log('commiting data');
       commit('startTraining', data);
+    },
+    endTraining({commit}, resultData) {
+      
+      commit('', resultData);
     }
   },
   getters: {
