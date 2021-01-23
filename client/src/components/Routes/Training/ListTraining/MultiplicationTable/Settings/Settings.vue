@@ -270,7 +270,7 @@ $widthBlock: 520px;
   width: 300px;
   height: 300px;
   border-radius: 0 30px 0 30px;
-  background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84655749-6d97-4275-8069-498380c8dd0d/dbdd218-73d8d9ca-39aa-4ad6-b2a5-4141e2164acc.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvODQ2NTU3NDktNmQ5Ny00Mjc1LTgwNjktNDk4MzgwYzhkZDBkXC9kYmRkMjE4LTczZDhkOWNhLTM5YWEtNGFkNi1iMmE1LTQxNDFlMjE2NGFjYy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.MS7KH1YlWHkZmFhP7biW0r0SMX9v1rwYL4NQ7syDDtk")
+  background: url("https://www.mathsisfun.com/numbers/images/times-table.svg")
     no-repeat center;
   background-size: cover;
 }
