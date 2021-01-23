@@ -108,7 +108,6 @@ get:
          ALSO add experience to user
 @route   POST /api/v1/training/multiplicationtable/result
 @access  Private
-
 req:
 {
     "allAnswers": 50

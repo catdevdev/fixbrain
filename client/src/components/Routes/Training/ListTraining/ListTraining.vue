@@ -1,19 +1,19 @@
 <template>
   <div class="list-training__wrapper">
     <TrainingBlock
-      imgUrl="https://1.bp.blogspot.com/-2XgyjrX7P8w/XZ_5mH7ofwI/AAAAAAAAdFY/TwI9ehur6jUoHzfPJKoLtX3s6suhN5rMwCLcBGAsYHQ/s2560/genji-overwatch-girl-v9-2560x1440.jpg"
+      imgUrl="https://thumbs.dreamstime.com/b/multiplication-table-24519072.jpg"
       header="Multiplication table"
       description="Improve your knowledge and memory speed with your workout multiplication table!"
       urlRoute="training/multiplicationtable/settings"
     ></TrainingBlock>
     <TrainingBlock
-      imgUrl="https://bestofcomicbooks.com/wp-content/uploads/2018/06/D.Va-Beautiful.jpg"
+      imgUrl="https://cs11.pikabu.ru/post_img/big/2020/07/24/6/1595579673153852321.jpg"
       header="Speed reaction"
       description="Impore your speed react with different tests"
       urlRoute="training/speedreaction/settings"
     ></TrainingBlock>
     <TrainingBlock
-      imgUrl="https://cdnb.artstation.com/p/assets/images/images/005/846/321/large/sakimi-chan-widowmaker.jpg?1494202819"
+      imgUrl="https://i.pinimg.com/originals/25/80/81/2580817a6f4eb7f1be3e35f7fc8db97b.jpg"
       header="Calculation speed"
       description="Improve your calculation speed with difference settings!"
       urlRoute="training/calculationspeed/settings"
